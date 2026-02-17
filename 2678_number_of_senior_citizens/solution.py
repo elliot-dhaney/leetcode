@@ -1,7 +1,7 @@
 class Solution:
     def __init__(self):
         pass
-        
+
     def countSeniors(self, details):
         pass
 
