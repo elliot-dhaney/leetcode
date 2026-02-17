@@ -1,3 +1,4 @@
+import time
 import random 
 from solution import Solution
 
@@ -99,6 +100,7 @@ class Test:
             self.TESTS.append(test)
 
     def runTests(self):
+        startTime = time.time()
         testsRun = 0
         testsFailed = 0
         for test in self.TESTS:
@@ -120,10 +122,14 @@ class Test:
             except AssertionError:
                 print(f'Test Failed with\nINPUT {inputs}\nEXPECTED {expected}\nACTUAL {output}')
                 testsFailed += 1
-        
+
+        endTime = time.time()
+
         print(f'Tests Run: {testsRun}')
         print(f'Tests Succeeded: {testsRun - testsFailed}')
         print(f'Tests Failed: {testsFailed}')
+
+        print(f'Testing took {endTime - startTime} milliseconds')
 
 Tester = Test()
 Tester.runTests()
