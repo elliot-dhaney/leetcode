@@ -1,1 +1,1 @@
-# leetcode
+My solutions to arbitrary leetcode problems. All solutions, problem solving, and code is my own, with no help from AI, the internet, or other people.
