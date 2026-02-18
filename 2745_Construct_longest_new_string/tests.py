@@ -19,6 +19,38 @@ class Test:
             'z': 2,
         },
         'OUTPUT': 14, # "ABABAABBAABBAA"
+    }, {
+        'TITLE': 'Equal x and y',
+        'INPUTS': {
+            'x': 3,
+            'y': 3,
+            'z': 1,
+        },
+        'OUTPUT': 14, # "ABBBAABBAABBAA"
+    }, {
+        'TITLE': '1 x, 1 y, 1 z',
+        'INPUTS': {
+            'x': 1,
+            'y': 1,
+            'z': 1,
+        },
+        'OUTPUT': 6, # "ABBBAA"
+    }, {
+        'TITLE': '1 x, 1 y, 5 z',
+        'INPUTS': {
+            'x': 1,
+            'y': 1,
+            'z': 5,
+        },
+        'OUTPUT': 14, # "ABABABABABBBAA"
+    }, {
+        'TITLE': '40 x, 39 y, 50 z',
+        'INPUTS': {
+            'x': 40,
+            'y': 39,
+            'z': 50,
+        },
+        'OUTPUT': 258,
     },
     ]
 
