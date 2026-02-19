@@ -20,7 +20,8 @@ class Solution:
         # s[l] == 1 only for columns l that have not been picked yet.
         # There are 2^m such values in memo. With m<=8 this is very reasonable.
         availableCols = [i for i in range(len(students))]
-        return self.computeMaxCompatibilitySum(0, availableCols)
+        maxValue = self.computeMaxCompatibilitySum(0, availableCols)
+        return maxValue
 
     def computeMaxCompatibilitySum(self, currentRow, availableCols):
         # Check our memoization
@@ -31,17 +32,16 @@ class Solution:
         # Base cases
         if (currentRow == len(self.scores)):
             return 0
-        elif (currentRow == len(self.scores) - 1):
-            return max(self.scores[currentRow])
 
         maxValue = -1
         for colIndex in range(len(availableCols)):
             col = availableCols[colIndex]
+            nextCols = availableCols[:colIndex] + availableCols[colIndex+1:]              
 
             # Get the max sum of the remaining rows/cols if we use this row,col pair.
             maxSubSum = self.computeMaxCompatibilitySum(
                 currentRow + 1,
-                availableCols[:colIndex] + availableCols[colIndex+1:]
+                nextCols
             )
 
             maxValue = max(maxValue, maxSubSum + self.scores[currentRow][col])

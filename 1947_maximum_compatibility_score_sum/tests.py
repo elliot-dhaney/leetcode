@@ -18,6 +18,13 @@ class Test:
         },
         'OUTPUT': 0,
     }, {
+        'TITLE': 'More answers per student/mentor',
+        'INPUTS': {
+            'students': [[0,1,0,1,1,1],[1,0,0,1,0,1],[1,0,1,1,0,0]],
+            'mentors': [[1,0,0,0,0,1],[0,1,0,0,1,1],[0,1,0,0,1,1]],
+        }, 
+        'OUTPUT': 10, # scores = [[2,5,5],[5,2,2],[3,0,0]]
+    }, {
         'TITLE': 'Test case with max inputs',
         'INPUTS': {
             'students': [
