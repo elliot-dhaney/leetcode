@@ -5,30 +5,30 @@ class Solution:
         # down to 3 character width from the left and try again.
 
         substringCount = 0
+        sLength = len(s)
 
         i = 0
-        while (i < len(s)):
-            j = i
-            characterCount = { 'a': 0, 'b': 0, 'c': 0 }
-
+        j = 0
+        characterCount = { 'a': 0, 'b': 0, 'c': 0 }
+        while (i < sLength-2 and j < sLength):
             # Extend the window until it contains all 3 characters.
-            while (j < len(s)):
+            while (j < sLength):
                 characterCount[s[j]] += 1
                 if (self.doesContainAllCharacters(characterCount)):
-                    substringCount += len(s) - j
+                    substringCount += sLength - j
                     j += 1
                     break
                 j += 1
 
             # Remove the first character from our window + count.
-            while (i < j):
+            while (i <= j-2):
                 characterCount[s[i]] -= 1
                 i += 1
                 if (not self.doesContainAllCharacters(characterCount)):
                     break
 
                 # If we still have all the characters, add these substrings
-                substringCount += len(s) - j + 1
+                substringCount += sLength - j + 1
 
         return substringCount
 
