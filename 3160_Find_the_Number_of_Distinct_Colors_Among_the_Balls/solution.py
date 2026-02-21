@@ -30,16 +30,8 @@ class Solution:
 
             ballColors[ball] = color
             result.append(uniqueColors)
-            print(ballColors, query)
-            
-
-        print(result)
 
         return result
-
-
-
-        
 
     def solve(self, inputs):
         return self.queryResults(inputs['limit'], inputs['queries'])
