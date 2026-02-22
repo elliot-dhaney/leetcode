@@ -15,11 +15,44 @@ class Test:
             'n': 2147483644,
         },
         'OUTPUT': 1073741822,
+    }, {
+        'TITLE': 'Using 0b0000...0010',
+        'INPUTS': {
+            'n': 2,
+        },
+        'OUTPUT': 2**30,
+    }, {
+        'TITLE': 'Using 0b0011111...11100',
+        'INPUTS': {
+            'n': 2**31 - 2,
+        },
+        'OUTPUT': 2**31 - 2,
     }, 
     ]
 
     def __init__(self):
         self.solution = Solution()
+
+        self.numTests = 25
+        self.generateTests()
+
+    def generateTests(self):
+        for i in range(self.numTests):
+            inp = 0
+            out = 0
+            for j in range(30):
+                randDigit = random.randint(0, 1)
+                inp = inp * 2 + randDigit
+                out += 2 ** j * randDigit
+            inp *= 2
+            out *= 2
+
+            self.TESTS.append({
+                'TITLE': f'Generated Test {i}',
+                'INPUTS': { 'n': inp },
+                'OUTPUT': out
+            })
+
 
     def runTests(self):
         startTime = time.time()
