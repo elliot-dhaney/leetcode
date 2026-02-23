@@ -1,3 +1,9 @@
+**META**
+
+Difficulty - Medium
+
+**Problem Statement**
+
 You are given a string `s` that contains some bracket pairs, with each pair containing a non-empty key.
 
 For example, in the string `"(name)is(age)yearsold"`, there are two bracket pairs that contain the keys `"name"` and `"age"`.
@@ -32,7 +38,7 @@ Input: s = "(a)(a)(a)aaa", knowledge = [["a","yes"]]
 Output: "yesyesyesaaa"
 ``` 
 
-Constraints:
+**Constraints:**
 
 ```
 1 <= s.length <= 105
