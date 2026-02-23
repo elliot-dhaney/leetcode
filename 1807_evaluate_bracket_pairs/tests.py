@@ -24,6 +24,76 @@ class Test:
             'knowledge': [["a","yes"]],
         },
         'OUTPUT': "yesyesyesaaa",
+    }, {
+        'TITLE': 'Entire string is a single key',
+        'INPUTS': {
+            's': "(a)",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "yes",
+    }, {
+        'TITLE': 'String has no keys',
+        'INPUTS': {
+            's': "hello",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "hello",
+    }, {
+        'TITLE': 'String has substrings using keys, but no parens',
+        'INPUTS': {
+            's': "aaaabanana",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "aaaabanana",
+    }, {
+        'TITLE': 'String has substrings using keys, but only one parens',
+        'INPUTS': {
+            's': "aaa(a)banana",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "aaayesbanana",
+    }, {
+        'TITLE': 'String has parens containing a duplicated key',
+        'INPUTS': {
+            's': "(aaaa)banana",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "?banana",
+    }, {
+        'TITLE': 'String has parens containing a key + a non-key character',
+        'INPUTS': {
+            's': "aaa(ab)anana",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "aaa?anana",
+    }, {
+        'TITLE': 'String has empty parens',
+        'INPUTS': {
+            's': "aaaa()banana",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "aaaa?banana",
+    }, {
+        'TITLE': 'String has pairs at start and end of string',
+        'INPUTS': {
+            's': "(a)banana(a)",
+            'knowledge': [["a","yes"]],
+        },
+        'OUTPUT': "yesbananayes",
+    }, {
+        'TITLE': 'String has multiple similar keys',
+        'INPUTS': {
+            's': "(a)(a)ab(an)(an)a",
+            'knowledge': [["a","yes"],["an","na"]],
+        },
+        'OUTPUT': "yesyesabnanaa",
+    }, {
+        'TITLE': 'String has pair containing a partial key',
+        'INPUTS': {
+            's': "aaa(ab)anana",
+            'knowledge': [["aba","yes"]],
+        },
+        'OUTPUT': "aaa?anana",
     }, 
     ]
 
