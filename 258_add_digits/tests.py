@@ -15,6 +15,30 @@ class Test:
             'num': 0
         },
         'OUTPUT': 0,
+    }, {
+        'TITLE': 'Lot of digits',
+        'INPUTS': {
+            'num': 111111111
+        },
+        'OUTPUT': 9,
+    }, {
+        'TITLE': 'Lot of repetitions',
+        'INPUTS': {
+            'num': 99999999999
+        },
+        'OUTPUT': 9,
+    }, {
+        'TITLE': 'Midpoint of exactly 10',
+        'INPUTS': {
+            'num': 91
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'Start with 1 digit',
+        'INPUTS': {
+            'num': 5
+        },
+        'OUTPUT': 5,
     }, 
     ]
 
