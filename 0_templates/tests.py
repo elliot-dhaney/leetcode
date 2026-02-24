@@ -13,6 +13,20 @@ class Test:
 
     def __init__(self):
         self.solution = Solution()
+        
+        self.numTests = 0
+        self.generateTests()
+
+    def generateTests(self):
+        for i in range(self.numTests):
+            inp = 0
+            out = 0
+
+            self.TESTS.append({
+                'TITLE': f'Generated Test {i}',
+                'INPUTS': { '': inp },
+                'OUTPUT': out
+            })
 
     def runTests(self):
         startTime = time.time()
