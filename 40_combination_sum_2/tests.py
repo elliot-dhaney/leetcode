@@ -71,6 +71,8 @@ class Test:
             testsRun += 1
             try:
                 output = self.solution.solve(inputs)
+                for val in output:
+                    val.sort()
             except Exception as e:
                 print(f'Error occurred while solving: {e}')
                 testsFailed += 1
