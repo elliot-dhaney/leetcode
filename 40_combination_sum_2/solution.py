@@ -6,13 +6,13 @@ class Solution:
         self.candidates = candidates
         self.target = target
 
-        sums = self.check(0, target)
+        sums = self.findCombinations(0, target)
         self.removeDuplicateCombis(sums)
 
         output = self.cleanSums(sums)
         return output
 
-    def check(self, index, target):
+    def findCombinations(self, index, target):
         if (index >= len(self.candidates)):
             return []
 
@@ -29,15 +29,17 @@ class Solution:
             self.memo[memoKey] = [str(candidate)]
             return [str(candidate)]
 
-        noCandidate = self.check(index + 1, target)
-        output = noCandidate
-        withCandidate = self.check(index + 1, target - candidate)
+        withCandidate = self.findCombinations(index + 1, target - candidate)
+        noCandidate = self.findCombinations(index + 1, target)
+
+        output = []
+        for combi in noCandidate:
+            output.append(combi)
         for candidateSum in withCandidate:
             output.append(candidateSum + ',' + str(candidate))
 
-        self.removeDuplicateCombis(output)
-
         self.memo[memoKey] = output
+
         return output
  
     def removeDuplicateCombis(self, combis):

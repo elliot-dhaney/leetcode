@@ -59,6 +59,13 @@ class Test:
             'target': 101,
         },
         'OUTPUT': []
+    }, {
+        'TITLE': 'Why is this failing',
+        'INPUTS': {
+            'candidates': [4,2,5,2,5,3,1,5,2,2],
+            'target': 9,
+        },
+        'OUTPUT': [[1,2,2,2,2],[1,2,2,4],[1,3,5],[2,2,2,3],[2,2,5],[2,3,4],[4,5]]
     }, 
     ]
 
