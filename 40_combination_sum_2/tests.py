@@ -38,6 +38,34 @@ class Test:
             [2,6],
             [8]
         ],
+    }, {
+        'TITLE': 'All 1s, perf test',
+        'INPUTS': {
+            'candidates': [1 for i in range(30)],
+            'target': 30,
+        },
+        'OUTPUT': [[1 for i in range(30)]]
+    }, {
+        'TITLE': 'All 1s but not completable, perf test',
+        'INPUTS': {
+            'candidates': [1 for i in range(30)],
+            'target': 31,
+        },
+        'OUTPUT': []
+    }, {
+        'TITLE': 'Max 1s but not completable, perf test',
+        'INPUTS': {
+            'candidates': [1 for i in range(100)],
+            'target': 101,
+        },
+        'OUTPUT': []
+    }, {
+        'TITLE': 'Why is this failing',
+        'INPUTS': {
+            'candidates': [4,2,5,2,5,3,1,5,2,2],
+            'target': 9,
+        },
+        'OUTPUT': [[1,2,2,2,2],[1,2,2,4],[1,3,5],[2,2,2,3],[2,2,5],[2,3,4],[4,5]]
     }, 
     ]
 
@@ -73,6 +101,8 @@ class Test:
                 output = self.solution.solve(inputs)
                 for val in output:
                     val.sort()
+
+                output.sort()
             except Exception as e:
                 print(f'Error occurred while solving: {e}')
                 testsFailed += 1
