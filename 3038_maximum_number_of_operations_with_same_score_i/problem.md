@@ -1,3 +1,9 @@
+**META**
+
+Difficulty - Easy
+
+**Problem Statement**
+
 You are given an array of integers `nums`. Consider the following operation:
 
 Delete the first two elements `nums` and define the score of the operation as the sum of these two elements.

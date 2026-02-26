@@ -21,6 +21,30 @@ class Test:
             'nums': [5,3],
         },
         'OUTPUT': 1,
+    }, {
+        'TITLE': 'No nums',
+        'INPUTS': {
+            'nums': [],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'Exactly 1 num',
+        'INPUTS': {
+            'nums': [5],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'All the same number',
+        'INPUTS': {
+            'nums': [1,1,1,1,1,1,1,1],
+        },
+        'OUTPUT': 4,
+    }, {
+        'TITLE': 'All the same number, but odd nums',
+        'INPUTS': {
+            'nums': [1,1,1,1,1,1,1,1,1],
+        },
+        'OUTPUT': 4,
     }, 
     ]
 
@@ -32,8 +56,17 @@ class Test:
 
     def generateTests(self):
         for i in range(self.numTests):
-            inp = 0
-            out = 0
+            inp = []
+            out = 9
+            sameSum = random.randint(2, 200)
+            for i in range(out):
+                num = random.rand(sameSum, 100)
+                num2 = sameSum - num
+                inp.append(num)
+                inp.append(num2)
+
+            if (random.randint(1, 100) < 50):
+                inp.append(random.randint(1, 1000))
 
             self.TESTS.append({
                 'TITLE': f'Generated Test {i}',
