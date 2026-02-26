@@ -1,17 +1,16 @@
 class Solution:
     def maxOperations(self, nums):
-        i = 0
-        count = 0
+        if (len(nums) < 2):
+            return 0
+
+        i = 2
+        count = 1
+        firstSum = nums[0] + nums[1]
         while (i <= len(nums) - 2):
-            newSum = nums[i] + nums[i+1]
-            if (i >= 2):
-                firstSum = nums[0] + nums[1]
-                if (newSum == firstSum):
-                    count += 1
-                else:
-                    break
-            else:
+            if (nums[i] + nums[i+1] == firstSum):
                 count += 1
+            else:
+                break
             i += 2
         return count
 
