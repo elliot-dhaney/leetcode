@@ -24,6 +24,48 @@ class Test:
             'meetings': [[1,6]],
         },
         'OUTPUT': 0,
+    }, {
+        'TITLE': 'Overlapping meetings',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[3,8],[3,8],[3,8],[3,8],[3,8],[3,8],[3,8],],
+        },
+        'OUTPUT': 4,
+    }, {
+        'TITLE': 'Full coverage',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[1,6],[7,10]],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'Full coverage with overlap',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[1,5],[5,10]],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'Full coverage with lots of overlap',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[1,9],[2,10]],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'Some coverage with lots of overlap',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[1,4],[2,5],[7,8],[7,9]],
+        },
+        'OUTPUT': 2,
+    }, {
+        'TITLE': 'One day meetings',
+        'INPUTS': {
+            'days': 10,
+            'meetings': [[1,1],[5,5],[8,8]],
+        },
+        'OUTPUT': 7,
     }, 
     ]
 
