@@ -45,6 +45,12 @@ class Test:
             'nums': [1,1,1,1,1,1,1,1,1],
         },
         'OUTPUT': 4,
+    }, {
+        'TITLE': 'Dont have sequential same sum',
+        'INPUTS': {
+            'nums': [1,1,2,2,1,1,2,2,1,1],
+        },
+        'OUTPUT': 1,
     }, 
     ]
 
