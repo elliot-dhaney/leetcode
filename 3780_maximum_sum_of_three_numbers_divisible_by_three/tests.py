@@ -15,6 +15,30 @@ class Test:
             'nums': [2,5,1],
         },
         'OUTPUT': 0,
+    }, {
+        'TITLE': 'No 0s % 3',
+        'INPUTS': {
+            'nums': [4,5,2,1],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'No 1s % 3',
+        'INPUTS': {
+            'nums': [3,5,2,0],
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'Lots of the same numbers',
+        'INPUTS': {
+            'nums': [1,1,1,2,2,2,3,3,3],
+        },
+        'OUTPUT': 9,
+    }, {
+        'TITLE': 'Mix of numbers',
+        'INPUTS': {
+            'nums': [9, 3, 0, 5, 5, 5, 7, 1, 1],
+        },
+        'OUTPUT': 21,
     }, 
     ]
 
