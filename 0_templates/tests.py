@@ -4,7 +4,7 @@ from solution import Solution
 
 class Test:
     TESTS = [{
-        'TITLE': '',
+        'TITLE': 'Provided Test Case 1',
         'INPUTS': {
         },
         'OUTPUT': 0,
