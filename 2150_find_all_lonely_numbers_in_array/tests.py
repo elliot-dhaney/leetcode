@@ -15,6 +15,42 @@ class Test:
             'nums': [1,3,5,3],
         },
         'OUTPUT': [1,5],
+    }, {
+        'TITLE': 'Multiple duplicate numbers',
+        'INPUTS': {
+            'nums': [1,3,5,3,1,7,5],
+        },
+        'OUTPUT': [7],
+    }, {
+        'TITLE': 'Multiple neighbors',
+        'INPUTS': {
+            'nums': [1,2,5,6,8],
+        },
+        'OUTPUT': [],
+    }, {
+        'TITLE': 'Multiple neighbors on either side',
+        'INPUTS': {
+            'nums': [1,2,3,5,6,7,8],
+        },
+        'OUTPUT': [],
+    }, {
+        'TITLE': 'Multiple neighbors on either side 2',
+        'INPUTS': {
+            'nums': [1,2,3,5,6,7,8,9],
+        },
+        'OUTPUT': [],
+    }, {
+        'TITLE': 'Multiple neighbors on either side out of order',
+        'INPUTS': {
+            'nums': [7,2,5,1,6,10,8,3],
+        },
+        'OUTPUT': [10],
+    }, {
+        'TITLE': 'Neighbors and duplicates',
+        'INPUTS': {
+            'nums': [2, 9, 1, 5, 2, 9, 40, 41, 41],
+        },
+        'OUTPUT': [5],
     }, 
     ]
 
