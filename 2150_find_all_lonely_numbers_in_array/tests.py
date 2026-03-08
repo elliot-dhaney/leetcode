@@ -26,7 +26,7 @@ class Test:
         'INPUTS': {
             'nums': [1,2,5,6,8],
         },
-        'OUTPUT': [],
+        'OUTPUT': [8],
     }, {
         'TITLE': 'Multiple neighbors on either side',
         'INPUTS': {
@@ -80,10 +80,12 @@ class Test:
 
             inputs = test['INPUTS']
             expected = test['OUTPUT']
+            expected.sort()
 
             testsRun += 1
             try:
                 output = self.solution.solve(inputs)
+                output.sort()
             except Exception as e:
                 print(f'Error occurred while solving: {e}')
                 testsFailed += 1
