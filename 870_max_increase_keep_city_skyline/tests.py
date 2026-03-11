@@ -15,6 +15,39 @@ class Test:
             'grid': [[0,0,0],[0,0,0],[0,0,0]],
         },
         'OUTPUT': 0,
+    }, {
+        'TITLE': 'Symmetric City',
+        'INPUTS': {
+            'grid': [
+              [1,2,3,4],
+              [2,1,4,3],
+              [3,4,1,2],
+              [4,3,2,1]
+              ],
+        },
+        'OUTPUT': 24,
+    }, {
+        'TITLE': 'Interior flat',
+        'INPUTS': {
+            'grid': [
+              [5,4,4,5],
+              [4,0,0,4],
+              [4,0,0,4],
+              [5,4,4,5]
+              ],
+        },
+        'OUTPUT': 16,
+    }, {
+        'TITLE': 'Interior flat, identical maxes',
+        'INPUTS': {
+            'grid': [
+              [5,5,5,5],
+              [5,0,0,5],
+              [5,0,0,5],
+              [5,5,5,5]
+              ],
+        },
+        'OUTPUT': 20,
     }, 
     ]
 
