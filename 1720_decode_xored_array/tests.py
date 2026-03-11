@@ -7,7 +7,7 @@ class Test:
         'TITLE': 'Provided Test Case 1',
         'INPUTS': {
             'encoded': [1,2,3],
-            'first': 4,
+            'first': 1,
         },
         'OUTPUT': [1,0,2,1],
     }, {
@@ -17,23 +17,34 @@ class Test:
             'first': 4,
         },
         'OUTPUT': [4,2,0,7,4],
+    }, {
+        'TITLE': 'Only 2 nums',
+        'INPUTS': {
+            'encoded': [1],
+            'first': 1,
+        },
+        'OUTPUT': [1,0],
     }, 
     ]
 
     def __init__(self):
         self.solution = Solution()
         
-        self.numTests = 0
+        self.numTests = 20
         self.generateTests()
 
     def generateTests(self):
         for i in range(self.numTests):
-            inp = 0
-            out = 0
+            inp = [ ]
+            out = [ random.randint(1, 512) for j in range(random.randint(2, 200)) ]
+            first = out[0]
+
+            for j in range(len(out)-1):
+                inp.append(out[j]^out[j+1])
 
             self.TESTS.append({
                 'TITLE': f'Generated Test {i}',
-                'INPUTS': { '': inp },
+                'INPUTS': { 'encoded': inp, 'first': first },
                 'OUTPUT': out
             })
 
