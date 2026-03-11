@@ -12,7 +12,8 @@ class Solution:
                 if (grid[rowIndex][colIndex] > grid[maxIndByCol[colIndex]][colIndex]):
                     maxIndByCol[colIndex] = rowIndex
 
-        # Accumulate in our output the difference between each cell and the minimum of the max values in its row/col.
+        # Accumulate in our output the difference between each cell and the 
+        # minimum of the max values in its row/col.
         maxTotal = 0
         for rowInd in range(n):
             maxColIndForRow = maxIndByRow[rowInd]
