@@ -30,6 +30,34 @@ class Test:
             'k': 3,
         },
         'OUTPUT': -1,
+    }, {
+        'TITLE': 'One node tree',
+        'INPUTS': {
+            'tree': [1],
+            'k': 1,
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'One half perfect, the other half empty',
+        'INPUTS': {
+            'tree': [1,2,None,4,5,None,None,8,9,10,11,None,None,None,None],
+            'k': 1,
+        },
+        'OUTPUT': 7,
+    }, {
+        'TITLE': 'One half perfect, the other half empty. different k',
+        'INPUTS': {
+            'tree': [1,2,None,4,5,None,None,8,9,10,11,None,None,None,None],
+            'k': 3,
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'Lots of almost perfect subtrees',
+        'INPUTS': {
+            'tree': [1,2,3,4,5,6,7,8,9,None,11,None,13,14,15],
+            'k': 3,
+        },
+        'OUTPUT': -1,
     }, 
     ]
 
