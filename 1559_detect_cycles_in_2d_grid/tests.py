@@ -21,6 +21,30 @@ class Test:
             'grid': [["a","b","b"],["b","z","b"],["b","b","a"]],
         },
         'OUTPUT': False,
+    }, {
+        'TITLE': 'Grid of distinct letters',
+        'INPUTS': {
+            'grid': [["a","b","c"],["d","e","f"],["g","h","i"]],
+        },
+        'OUTPUT': False,
+    }, {
+        'TITLE': 'Grid with only one letter',
+        'INPUTS': {
+            'grid': [["a","a","a"],["a","a","a"],["a","a","a"]],
+        },
+        'OUTPUT': True,
+    }, {
+        'TITLE': 'Grid with two overlapping near-cycles',
+        'INPUTS': {
+            'grid': [["a","a","a","c"],["a","b","a","b"],["a","b","a","b"],["c","b","b","b"]],
+        },
+        'OUTPUT': False,
+    },{
+        'TITLE': 'Simple double loop',
+        'INPUTS': {
+            'grid': [["a","a","b","b"],["a","a","b","b"],["b","b","a","a"],["b","b","a","a"]],
+        },
+        'OUTPUT': True,
     }, 
     ]
 
