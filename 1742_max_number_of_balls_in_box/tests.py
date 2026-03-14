@@ -24,6 +24,27 @@ class Test:
             'highLimit': 28,
         },
         'OUTPUT': 2,
+    }, {
+        'TITLE': 'Only single digits',
+        'INPUTS': {
+            'lowLimit': 1,
+            'highLimit': 9,
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'Same limit',
+        'INPUTS': {
+            'lowLimit': 10,
+            'highLimit': 10,
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'Max count of 4',
+        'INPUTS': {
+            'lowLimit': 1,
+            'highLimit': 30,
+        },
+        'OUTPUT': 4,
     }, 
     ]
 
