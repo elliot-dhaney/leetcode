@@ -35,21 +35,21 @@ class Test:
         'TITLE': 'dictionary contains all but one letter',
         'INPUTS': {
             's': "thequickbrownfoxjumpedoverthelazydog", 
-            'wordDict': [letter for letter in 'abcdefhijklmnopqrstuvwxy'],
+            'wordDict': [letter for letter in 'abcdefghijklmnopqrstuvwxy'],
         },
         'OUTPUT': False,
     }, {
         'TITLE': 'Fully valid s',
         'INPUTS': {
             's': "annabanana", 
-            'wordDict': ["an", "ba", "a"],
+            'wordDict': ["an", "nn", "ab", "a"],
         },
         'OUTPUT': True,
     }, {
         'TITLE': 'Missing necessary dictionary word',
         'INPUTS': {
             's': "annabanana", 
-            'wordDict': ["an", "ba"],
+            'wordDict': ["an", "nn", "ba"],
         },
         'OUTPUT': False,
     }, 
