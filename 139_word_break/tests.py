@@ -24,6 +24,34 @@ class Test:
             'wordDict': ["cats","dog","sand","and","cat"],
         },
         'OUTPUT': False,
+    }, {
+        'TITLE': 'dictionary contains all letters',
+        'INPUTS': {
+            's': "thequickbrownfoxjumpedoverthesleepydog", 
+            'wordDict': [letter for letter in 'abcdefhijklmnopqrstuvwxyz'],
+        },
+        'OUTPUT': True,
+    }, {
+        'TITLE': 'dictionary contains all but one letter',
+        'INPUTS': {
+            's': "thequickbrownfoxjumpedoverthelazydog", 
+            'wordDict': [letter for letter in 'abcdefhijklmnopqrstuvwxy'],
+        },
+        'OUTPUT': False,
+    }, {
+        'TITLE': 'Fully valid s',
+        'INPUTS': {
+            's': "annabanana", 
+            'wordDict': ["an", "ba", "a"],
+        },
+        'OUTPUT': True,
+    }, {
+        'TITLE': 'Missing necessary dictionary word',
+        'INPUTS': {
+            's': "annabanana", 
+            'wordDict': ["an", "ba"],
+        },
+        'OUTPUT': False,
     }, 
     ]
 
