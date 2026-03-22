@@ -26,6 +26,12 @@ class Test:
             'list': [2,1],
         },
         'OUTPUT': [2],
+    }, {
+        'TITLE': 'List with only one element',
+        'INPUTS': {
+            'list': [1],
+        },
+        'OUTPUT': [],
     }, 
     ]
 
