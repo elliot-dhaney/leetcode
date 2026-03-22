@@ -21,6 +21,36 @@ class Test:
             'possible': [0,0],
         },
         'OUTPUT': -1,
+    }, {
+        'TITLE': 'Only two winnable games',
+        'INPUTS': {
+            'possible': [1,1],
+        },
+        'OUTPUT': -1,
+    }, {
+        'TITLE': 'Winnable and losable',
+        'INPUTS': {
+            'possible': [1,0],
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': 'Alternating possibles',
+        'INPUTS': {
+            'possible': [0,1,0,1,0],
+        },
+        'OUTPUT': 2,
+    }, {
+        'TITLE': '10 winnable then 10 losable',
+        'INPUTS': {
+            'possible': [1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
+        },
+        'OUTPUT': 1,
+    }, {
+        'TITLE': '8 losable then 12 winnable',
+        'INPUTS': {
+            'possible': [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1],
+        },
+        'OUTPUT': 19,
     }, 
     ]
 
