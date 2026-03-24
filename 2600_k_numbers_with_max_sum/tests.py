@@ -21,7 +21,25 @@ class Test:
             'k': 4,
         },
         'OUTPUT': 3,
-    }
+    }, {
+        'TITLE': 'Some negatives',
+        'INPUTS': {
+            'numOnes': 2,
+            'numZeros': 2,
+            'numNegOnes': 2,
+            'k': 6,
+        },
+        'OUTPUT': 0,
+    }, {
+        'TITLE': 'End negative',
+        'INPUTS': {
+            'numOnes': 2,
+            'numZeros': 2,
+            'numNegOnes': 8,
+            'k': 12,
+        },
+        'OUTPUT': -6,
+    }, 
     ]
 
     def __init__(self):
