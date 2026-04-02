@@ -15,6 +15,18 @@ class Test:
             'n': 3
         },
         'OUTPUT': 5,
+    }, {
+        'TITLE': 'n=4',
+        'INPUTS': {
+            'n': 4
+        },
+        'OUTPUT': 11,
+    }, {
+        'TITLE': 'n=6',
+        'INPUTS': {
+            'n': 6
+        },
+        'OUTPUT': 53,
     }, 
     ]
 
