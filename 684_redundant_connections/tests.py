@@ -15,6 +15,24 @@ class Test:
             'edges': [[1,2],[2,3],[3,4],[1,4],[1,5]],
         },
         'OUTPUT': [1,4],
+    }, {
+        'TITLE': 'Perfect Cycle',
+        'INPUTS': {
+            'edges': [[1,2],[2,3],[3,4],[4,5],[1,5]],
+        },
+        'OUTPUT': [1,5],
+    }, {
+        'TITLE': 'Long chain then triangle cycle',
+        'INPUTS': {
+            'edges': [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[9,7]],
+        },
+        'OUTPUT': [9,7],
+    }, {
+        'TITLE': 'Triangle cycle then long chain',
+        'INPUTS': {
+            'edges': [[9,7],[6,7],[7,8],[1,2],[2,3],[3,4],[4,5],[5,6],],
+        },
+        'OUTPUT': [7,8],
     }, 
     ]
     def __init__(self):
