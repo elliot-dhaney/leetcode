@@ -7,7 +7,7 @@ class Solution:
             # Get the index at the start of the next contiguous segment.
             nextIndex = s.find(
                 self.getAltZeroOrOne(s[index]), 
-                index
+                index + 1
             )
 
             # Update the counts, given the current segment.
