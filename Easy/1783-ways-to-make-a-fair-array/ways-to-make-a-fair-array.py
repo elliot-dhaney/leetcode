@@ -6,6 +6,10 @@ class Solution:
 
         partialSums = self.getPartialSums(n, nums)
 
+        # Force partialSums to be even length, for cleaner code.
+        if (n % 2 == 1):
+            partialSums.append(partialSums[-2])
+
         fairCount = 0
         # Now we try removing each index.
         for i in range(n):
@@ -23,31 +27,26 @@ class Solution:
         '''
         Returns True if new [evenSum, oddSum] after removing removedIndex are fair, and False otherwise
         '''
-        oddSum = partialSums[-1] if (n % 2 == 0) else partialSums[-2]
-        evenSum = partialSums[-1] if (n % 2 == 1) else partialSums[-2]
 
+        # oddSum is forced to partialSums[-1] because we forced partialSums to be
+        # even lengthed.
         if (removedIndex == 0):
-            return oddSum == evenSum - nums[0]
+            return partialSums[-1] == partialSums[-2] - nums[0]
 
-        # Get the even/odd partial sums of nums[removedIndex+1:], then swap parities
-        # and add to the even/odd partial sums of nums[:removedIndex].
+        # Get the even/odd partial sums of nums[:removedIndex].
         if (removedIndex % 2 == 0):
-            newEvenRH = oddSum - partialSums[removedIndex - 1]
-            newOddRH = evenSum - partialSums[removedIndex]
-            return (
-                partialSums[removedIndex] - nums[removedIndex] + newEvenRH ==
-                partialSums[removedIndex - 1] + newOddRH
-            )
+            evenLH = partialSums[removedIndex] - nums[removedIndex]
+            oddLH = partialSums[removedIndex - 1]
         else:
-            newEvenRH = oddSum - partialSums[removedIndex]
-            newOddRH = evenSum - partialSums[removedIndex - 1]
-            return (
-                partialSums[removedIndex - 1] + newEvenRH ==
-                partialSums[removedIndex] - nums[removedIndex] + newOddRH
-            )
+            evenLH = partialSums[removedIndex - 1]
+            oddLH = partialSums[removedIndex] - nums[removedIndex]
+        
+        # Get the even/odd partial sums of nums[removedIndex+1:].
+        oldOddRH = partialSums[-1] - partialSums[removedIndex - ((removedIndex + 1) % 2)]
+        oldEvenRH = partialSums[-2] - partialSums[removedIndex - (removedIndex % 2)]
 
-
-
+        # Add the opposite-parity LH/RH partial sums and compare.
+        return (evenLH + oldOddRH == oddLH + oldEvenRH)
 
     def getPartialSums(self, n: int, nums: list[int]) -> list[int]:
         '''
